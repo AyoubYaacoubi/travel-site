@@ -1,8 +1,24 @@
 {
   "name": "travel-site",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyoubYaacoubi/travel-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AyoubYaacoubi/travel-site/issues"
+  },
+  "homepage": "https://github.com/AyoubYaacoubi/travel-site#readme",
   "dependencies": {
-    "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
     "normalize.css": "^8.0.1"
   }
 }
