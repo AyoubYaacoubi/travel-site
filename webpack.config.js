@@ -2,6 +2,7 @@ const path = require('path')
 
 const postCSSPlugins = [
     require("postcss-simple-vars"),
+    require('postcss-mixins'),
     require("postcss-nested"),
     require("postcss-import"),
     require("autoprefixer")
@@ -13,6 +14,7 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, './app')
     },
+// to recompile the bundle: http://localhost:3000/invalidate
     devServer: {
         before: function(app, server){
             server._watch('./app/**/*.html')
