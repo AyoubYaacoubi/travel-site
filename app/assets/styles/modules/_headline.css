@@ -1,0 +1,49 @@
+.headline{
+    font-size: 2.1rem;
+    font-weight: 300;
+    color: $mainBlue;
+
+    @mixin atSmall{
+        font-size: 3rem;
+    }
+
+    &--cntr{
+        text-align: center;
+    }
+
+    &--lt{
+        font-weight: 100;
+    }
+    
+    &--nrw{
+        max-width: 500px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &--s{
+        font-size: 1.3rem;
+        @mixin atSmall{
+            font-size: 2rem;
+        }
+    }
+
+    &--orange{
+        color: $mainOrange;
+    }
+
+    &--b-mar-l{
+        margin-bottom: .3em;
+        @mixin atSmall{
+            margin-bottom: .2em;
+        }
+    }
+
+    &--b-mar-s{
+        margin-bottom: 1.2em;
+    }
+    strong{
+        font-weight: 400;
+    }
+    
+}

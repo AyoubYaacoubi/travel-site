@@ -4,3 +4,6 @@
 @import "./base/_global.css";
 @import "./modules/_large-hero.css";
 @import "./modules/_btn.css";
+@import "./modules/_wrapper.css";
+@import "./modules/_page-section.css";
+@import "./modules/_headline.css";
