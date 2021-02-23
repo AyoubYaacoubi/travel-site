@@ -46,4 +46,8 @@
         font-weight: 400;
     }
     
+    &--t-mar-none{
+        margin-top: 0;
+    }
+
 }
