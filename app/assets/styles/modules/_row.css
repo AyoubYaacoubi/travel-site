@@ -6,6 +6,13 @@
         margin-right: -65px;
     }
 
+    &--gutter-larger{
+        margin-right: -100px;
+    }
+
+    &--gutter-larger > div{
+        padding-right: 100px;
+    }
 
     &--gutter > div{
         padding-right: 65px;
@@ -19,6 +26,11 @@
 
         &__medium-4--larger{
             width: 37%;
+        }
+
+        &__medium-6{
+            width: 50%;
+            float: left;
         }
 
         &__medium-8{
