@@ -25,8 +25,14 @@
         }
     }
 
-    @mixin atSmall{
-        margin-bottom: 3.875rem;
+    &--no-b-margin{
+        margin-bottom: 0;
+    }
+
+    &--b-margin-at-small{
+        @mixin atSmall{
+            margin-bottom: 3.875rem;
+        }
     }
 
     &--med{
