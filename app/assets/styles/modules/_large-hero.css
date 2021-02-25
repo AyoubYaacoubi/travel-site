@@ -1,18 +1,23 @@
 .large-hero{
     position: relative;
     border-bottom: 10px solid $mainBlue;
-
+    
     &__image{
         display: block;
     }
-
+    
     &__txt-cont{
         position: absolute;
         left: 0;
         top: 50%;
         width: 100%;
+        padding-top: 100px;  
         text-align: center;
         transform: translateY(-50%);
+
+        @mixin atSmall{
+            padding-top: 62px;  
+        }
     }
     &__title{
         font-size: 3rem;
