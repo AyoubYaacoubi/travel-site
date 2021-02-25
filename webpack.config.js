@@ -1,6 +1,7 @@
 const path = require('path')
 
 const postCSSPlugins = [
+    require('postcss-hexrgba'),
     require("postcss-simple-vars"),
     require('postcss-mixins'),
     require("postcss-nested"),
