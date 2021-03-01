@@ -3,6 +3,7 @@ class MobileNav{
     constructor(){
         this.menuIcon = document.querySelector('.site-header__menu-icon')
         this.menuCont = document.querySelector('.site-header__menu-cont')
+        this.siteHeader = document.querySelector('.site-header')
 
         this.event()
     }
@@ -13,7 +14,7 @@ class MobileNav{
 
     toggleMenu(){
         this.menuCont.classList.toggle('site-header__menu-cont--is-visible')
-        
+        this.siteHeader.classList.toggle('site-header--is-expanded')
     }
 }
 
