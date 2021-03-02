@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/AyoubYaacoubi/travel-site#readme",
   "dependencies": {
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
