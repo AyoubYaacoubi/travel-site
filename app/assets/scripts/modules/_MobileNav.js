@@ -15,6 +15,7 @@ class MobileNav{
     toggleMenu(){
         this.menuCont.classList.toggle('site-header__menu-cont--is-visible')
         this.siteHeader.classList.toggle('site-header--is-expanded')
+        this.menuIcon.classList.toggle('site-header__menu-icon--close-x')
     }
 }
 

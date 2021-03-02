@@ -1,6 +1,11 @@
 .primary-nav{
+
+    padding-top: 10px;
+
+
     @mixin atMedium{
         float: right;
+        padding-top: 0;
     }
     
     ul{
@@ -14,6 +19,7 @@
         display: inline-block;
         padding-right: 15px;
         
+
         @mixin atMedium{
             display: block;
             float: left;
@@ -32,7 +38,13 @@
             color: #fff;
             display: block;
             font-weight: 300;
-            padding: 12px 0;
+            padding: 10px 3px;
+            background-color: rgba(47, 85, 114, .77);
+            
+            @mixin atMedium{
+                background-color: transparent;
+                padding: 12px 0;
+            }
         }
     }
 }

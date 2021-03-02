@@ -3,9 +3,10 @@
     width: 100%;
     padding: 10px 0;
     z-index: 2;
+    transition: all 200ms ease-out;
 
-    &--is-expanden{
-        background-color: red;
+    &--is-expanded{
+        background-color: rgba(47, 85, 114, .55);
     }
     
     @mixin atMedium{
@@ -34,32 +35,73 @@
     }
 
     &__menu-cont{
-        display: none;
-        padding-top: 100px;
+        padding-top: 90px;
         text-align: center;
+        opacity: 0;
+        position: relative;
+        transform: scale(1.2);
+        z-index: -10;
+        transition: all 300ms ease-out;
 
         &--is-visible{
-            display: block;
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
         }
 
         @mixin atMedium{
-            display: block;
+            opacity: 1;
+            transform: scale(1);
             padding-top: 0;
         }
     }
 
     &__menu-icon{
         diplay: block;
-        height: 20px;
-        width:20px;
-        background: #fff;
+        height: 25px;
+        width:28px;
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 15px;
+        right: 15px;
+        z-index: 3;
 
         @mixin atMedium{
             display: none;
         }
+
+        &--close-x{
+            &::before{transform: rotate(45deg) scaleX(1.12);}
+            &::after{transform: rotate(-45deg) scaleX(1.12);}
+            .site-header__menu-bar{transform: translateX(-70%); opacity: 0;}
+        }
+
+        &::after,
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            border-radius: 3px;
+            background-color: #fff;
+            transform-origin: 0 50%;
+            transition: all 200ms ease-out;
+        }
+        &::after{bottom: 0;}
+        &::before{top: 0;}
+    }
+
+
+    &__menu-bar{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        border-radius: 3px;
+        transform: translateY(-50%);
+        background-color: #fff;
+        transition: all 200ms ease-out;
     }
 
 }
