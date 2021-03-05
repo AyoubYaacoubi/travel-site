@@ -9,14 +9,20 @@
         background-color: rgba(47, 85, 114, .55);
     }
     
+    
+
     @mixin atMedium{
+        position: fixed;
         background-color: rgba(47, 85, 114, .3);
+        &--dark{
+            background-color: rgba(47, 85, 114, .8);
+        }
     }
 
     &__btn-cont{
         @mixin atMedium{
             float: right;
-            }
+        }
     }
 
     &__logo{
@@ -31,6 +37,11 @@
             padding: 25px 36px;
             left: auto;
             transform: translateX(0);
+            transform-origin: 0 0;  
+            transition: all 300ms ease-out;
+            .site-header--dark &{
+                transform: scale(.55);
+            }
         }
     }
 
