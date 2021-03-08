@@ -7,7 +7,7 @@ class RevealOnScroll{
         this.tresholdPercent = tresholdPercent
         this.hideInitially()
         this.windowHeight = window.innerHeight
-        this.scrollThrottle = throttle(this.calcCaller, 200).bind(this)
+        this.scrollThrottle = throttle(this.calcCaller, 200).bind(this) // bind(this) ensure that the this keyword still refer to our overall object.
         this.event()
     }
     event(){
