@@ -26,7 +26,7 @@ module.exports = {
         host: '0.0.0.0'
     },
     mode: 'development',
-    // watch: true,
+    // watch: true, // if we do not use the dev server
     module: {
         rules: [
             {test: /\.css$/i, use: ['style-loader', 'css-loader?url=false', {loader: 'postcss-loader', options: {postcssOptions: {plugins: postCSSPlugins}}}]}

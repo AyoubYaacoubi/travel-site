@@ -1,7 +1,7 @@
 .primary-nav{
 
     padding-top: 10px;
-
+    
 
     @mixin atMedium{
         float: right;
@@ -44,6 +44,9 @@
             @mixin atMedium{
                 background-color: transparent;
                 padding: 12px 0;
+                &.is-current-link{
+                    color: #fabb96; 
+                }
             }
         }
     }
