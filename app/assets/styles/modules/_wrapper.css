@@ -1,46 +1,50 @@
-.wrapper{
-    padding-right: 18px;
-    padding-left: 18px;
-    max-width: 1236px;
-    margin-right: auto;
-    margin-left: auto;
-    overflow: hidden;
-    margin-bottom: 1rem;
+.wrapper {
+  padding-right: 18px;
+  padding-left: 18px;
+  max-width: 1236px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  margin-bottom: 1rem;
 
-    &--no-padding-until-medium{
-        padding-right: 0;
-        padding-left: 0;
-        @mixin atMedium{
-            padding-right: 18px;
-            padding-left: 18px;
-        }
+  &--no-padding-until-medium {
+    padding-right: 0;
+    padding-left: 0;
+    @mixin atMedium {
+      padding-right: 18px;
+      padding-left: 18px;
     }
+  }
 
-    &--no-padding-until-large{
-        padding-right: 0;
-        padding-left: 0;
-        @mixin atLarge{
-            padding-right: 18px;
-            padding-left: 18px;
-        }
+  &--no-padding-until-large {
+    padding-right: 0;
+    padding-left: 0;
+    @mixin atLarge {
+      padding-right: 18px;
+      padding-left: 18px;
     }
+  }
 
-    &--no-b-margin{
-        margin-bottom: 0;
-    }
+  &--no-b-margin {
+    margin-bottom: 0;
+  }
 
-    &--b-margin-at-small{
-        @mixin atSmall{
-            margin-bottom: 3.875rem;
-        }
+  &--b-margin-at-small {
+    @mixin atSmall {
+      margin-bottom: 3.875rem;
     }
+  }
 
-    &--med{
-        max-width: 976px;
-    }
+  &--med {
+    max-width: 976px;
+  }
 
-    .wrapper{
-        padding-right: 0;
-        padding-left: 0;
-    }
+  &--narrow {
+    max-width: 476px;
+  }
+
+  .wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }

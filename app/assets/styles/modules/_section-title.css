@@ -1,30 +1,34 @@
-.section-title{
+.section-title {
+  font-size: 2.55rem;
+  text-align: center;
+  font-weight: 200;
+  strong {
+    font-weight: 500;
+  }
 
-    font-size: 2.55rem;
-    text-align: center;
-    font-weight: 200;
-    strong{
-        font-weight: 500;
-    }
+  &--blue {
+    color: $mainBlue;
+  }
 
-    &--blue{
-        color: $mainBlue;
-    }
+  &--less-margin {
+    margin-top: 0;
+    margin-bottom: 1.3rem;
+  }
 
-    &__icon{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 0.6rem;
-    }
+  &__icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.6rem;
+  }
 
-    @mixin atSmall{
-        font-size: 3.75rem;
-        &__icon{
-            display: inline-block;
-            margin-right: .5rem;
-            margin-left: 0;
-            margin-bottom: 0;
-        }
+  @mixin atSmall {
+    font-size: 3.75rem;
+    &__icon {
+      display: inline-block;
+      margin-right: 0.5rem;
+      margin-left: 0;
+      margin-bottom: 0;
     }
+  }
 }
