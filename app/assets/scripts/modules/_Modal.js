@@ -2,14 +2,14 @@ class Modal {
   constructor() {
     this.body = document.querySelector("body")
     this.injectHTML()
-    this.openModalButtons = document.querySelectorAll(".open-modal")
+    // this.openModalButtons = document.querySelectorAll(".open-modal")
     this.closeModalButton = document.querySelector(".modal__close")
     this.modal = document.querySelector(".modal")
     this.events()
   }
   events() {
     // listen for open events:
-    this.openModalButtons.forEach((btn) => btn.addEventListener("click", (e) => this.openClickHandler(e)))
+    // this.openModalButtons.forEach((btn) => btn.addEventListener("click", (e) => this.openClickHandler(e)))
     // listen for close events:
     this.closeModalButton.addEventListener("click", () => this.closeClickHandler())
     // listen for key press events:
@@ -22,8 +22,8 @@ class Modal {
     }
   }
 
-  openClickHandler(e) {
-    e.preventDefault()
+  openClickHandler(/*e*/) {
+    // e.preventDefault()
     this.modal.classList.add("modal--is-visible")
   }
   closeClickHandler() {

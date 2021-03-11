@@ -14,7 +14,7 @@ class StickyHeader {
   events() {
     window.addEventListener(
       "scroll",
-      throttle(() => this.scrollHandler(), 200)
+      throttle(() => this.scrollHandler(), 100)
     )
     window.addEventListener(
       "resize",
