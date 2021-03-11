@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/AyoubYaacoubi/travel-site#readme",
   "dependencies": {
+    "lazysizes": "^5.3.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
