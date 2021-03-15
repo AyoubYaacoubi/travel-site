@@ -37,10 +37,11 @@
     padding: 5px;
     font-size: 2rem;
     transform: scaleX(1.2);
-    cursor: pointer;
     color: $mainBlue;
     transition: all 250ms ease-out;
-
+    @mixin atSmall {
+      cursor: pointer;
+    }
     &:hover {
       color: $mainOrange;
       transform: scaleX(1.2) rotate(180deg);
