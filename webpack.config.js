@@ -7,7 +7,21 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const fse = require("fs-extra")
 
 // const postCSSPlugins = [require("postcss-import"), require("postcss-simple-vars"), require("postcss-nested"), require("postcss-mixins"), require("autoprefixer")]
-const postCSSPlugins = ["postcss-import", "postcss-simple-vars", "postcss-nested", "postcss-mixins", "autoprefixer"]
+const postCSSPlugins = [
+  "postcss-import",
+  "postcss-simple-vars",
+  "postcss-nested",
+  "postcss-mixins",
+  "autoprefixer", // some
+]
+
+class RunAfterCompile {
+  apply(compiler) {
+    compiler.hooks.done.tap("Copy Images", function () {
+      fse.copySync("./app/assets/images", "./dist/assets/images")
+    })
+  }
+}
 
 let cssConfig = {
   test: /\.css$/i,
@@ -70,6 +84,15 @@ if (currentTask == "dev") {
 if (currentTask == "build") {
   cssConfig.use.unshift(MiniCssExtractPlugin.loader)
 
+  config.module.rules.push({
+    test: /\.js$/,
+    exclude: "/(node_modules)/",
+    use: {
+      loader: "babel-loader",
+      options: {presets: ["@babel/preset-env"]},
+    },
+  })
+
   config.output = {
     filename: "[name].[chunkhash].js",
     chunkFilename: "[name].[chunkhash].js",
@@ -84,7 +107,7 @@ if (currentTask == "build") {
     splitChunks: {chunks: "all"},
   }
 
-  config.plugins.push(new CleanWebpackPlugin(), new MiniCssExtractPlugin({filename: "style.[chunkhash].css"}))
+  config.plugins.push(new CleanWebpackPlugin(), new MiniCssExtractPlugin({filename: "style.[chunkhash].css"}), new RunAfterCompile())
 }
 
 module.exports = config
