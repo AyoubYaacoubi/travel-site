@@ -1,6 +1,6 @@
 (self["webpackChunktravel_site"] = self["webpackChunktravel_site"] || []).push([[582],{
 
-/***/ 895:
+/***/ 392:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";

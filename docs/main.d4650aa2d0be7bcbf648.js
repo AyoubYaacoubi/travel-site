@@ -1532,7 +1532,7 @@ module.exports = toNumber;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + "modal" + "." + "0928fa7b9c38bd2910db" + ".js";
+/******/ 			return "" + "modal" + "." + "65de87225d3c463e75b7" + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -1752,7 +1752,7 @@ var __webpack_exports__ = {};
 
 // EXTERNAL MODULE: ./node_modules/lazysizes/lazysizes.js
 var lazysizes = __webpack_require__(508);
-;// CONCATENATED MODULE: ./App/assets/scripts/modules/_MobileNav.js
+;// CONCATENATED MODULE: ./app/assets/scripts/modules/_MobileNav.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1797,7 +1797,7 @@ var throttle_default = /*#__PURE__*/__webpack_require__.n(throttle);
 // EXTERNAL MODULE: ./node_modules/lodash/debounce.js
 var debounce = __webpack_require__(818);
 var debounce_default = /*#__PURE__*/__webpack_require__.n(debounce);
-;// CONCATENATED MODULE: ./App/assets/scripts/modules/_RevealOnScroll.js
+;// CONCATENATED MODULE: ./app/assets/scripts/modules/_RevealOnScroll.js
 function _RevealOnScroll_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _RevealOnScroll_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1877,7 +1877,7 @@ var RevealOnScroll = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ const _RevealOnScroll = (RevealOnScroll);
-;// CONCATENATED MODULE: ./App/assets/scripts/modules/_StickyHeader.js
+;// CONCATENATED MODULE: ./app/assets/scripts/modules/_StickyHeader.js
 function _StickyHeader_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _StickyHeader_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1892,7 +1892,7 @@ var StickyHeader = /*#__PURE__*/function () {
     _StickyHeader_classCallCheck(this, StickyHeader);
 
     this.siteHeader = document.querySelector(".site-header");
-    this.pageSection = document.querySelectorAll(".page-section");
+    this.pageSections = document.querySelectorAll(".page-section");
     this.browserHeight = window.innerHeight;
     this.previousScrollY = window.scrollY;
     this.events();
@@ -1903,11 +1903,14 @@ var StickyHeader = /*#__PURE__*/function () {
     value: function events() {
       var _this = this;
 
-      window.addEventListener("scroll", throttle_default()(function () {
+      // listening for scroll events:
+      window.addEventListener("scroll", //100s scrollHandler
+      throttle_default()(function () {
         return _this.scrollHandler();
-      }, 100));
+      }, 100)); // babysitting the browser height.
+
       window.addEventListener("resize", debounce_default()(function () {
-        _this.browserHeight = window.innerHeight;
+        _this.browserHeight = window.innerHeight; //350s
       }, 350));
     }
   }, {
@@ -1915,17 +1918,19 @@ var StickyHeader = /*#__PURE__*/function () {
     value: function scrollHandler() {
       var _this2 = this;
 
-      this.getScrollDirection();
+      this.getScrollDirection(); // getting the scroll direction:
+      // the dark them for the header:
 
-      if (window.scrollY > window.innerHeight) {
+      if (window.scrollY > this.browserHeight) {
         this.siteHeader.classList.add("site-header--dark");
       } else {
         this.siteHeader.classList.remove("site-header--dark");
-      }
+      } // highliting the links:
 
-      this.pageSection.forEach(function (el) {
+
+      this.pageSections.forEach(function (el) {
         return _this2.calcSection(el);
-      });
+      }); // remove the highlight when we're up.
 
       if (window.scrollY / this.browserHeight * 100 < 20) {
         this.currentLink = document.querySelector(".is-current-link");
@@ -1934,15 +1939,18 @@ var StickyHeader = /*#__PURE__*/function () {
           this.currentLink.classList.remove("is-current-link");
         }
       }
-    }
+    } // calculating for the hightlight:
+
   }, {
     key: "calcSection",
     value: function calcSection(el) {
       if (window.scrollY + this.browserHeight > el.offsetTop && window.scrollY < el.offsetTop + el.offsetHeight) {
-        var scrollPercent = el.getBoundingClientRect().top / this.browserHeight * 100;
+        // getting the scroll percent:
+        var scrollPercent = el.getBoundingClientRect().top / this.browserHeight * 100; // highliting when we got to the sweet spot:
 
         if (scrollPercent < 18 && scrollPercent > -0.1 && this.scrollDirection == "down" || scrollPercent < 33 && this.scrollDirection == "up") {
-          var matchingLink = el.getAttribute("data-matching-link");
+          var matchingLink = el.getAttribute("data-matching-link"); // on the html <section data-matching-link="#section-tag">
+
           document.querySelectorAll(".primary-nav a:not(".concat(matchingLink, ")")).forEach(function (item) {
             return item.classList.remove("is-current-link");
           });
@@ -1967,7 +1975,7 @@ var StickyHeader = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ const _StickyHeader = (StickyHeader);
-;// CONCATENATED MODULE: ./App/assets/scripts/App.js
+;// CONCATENATED MODULE: ./app/assets/scripts/App.js
 
 
 
@@ -1986,7 +1994,7 @@ document.querySelectorAll(".open-modal").forEach(function (el) {
     e.preventDefault();
 
     if (typeof modal == "undefined") {
-      __webpack_require__.e(/* import() | modal */ 582).then(__webpack_require__.bind(__webpack_require__, 895)).then(function (x) {
+      __webpack_require__.e(/* import() | modal */ 582).then(__webpack_require__.bind(__webpack_require__, 392)).then(function (x) {
         modal = new x["default"]();
         setTimeout(function () {
           return modal.openClickHandler();
