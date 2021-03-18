@@ -274,7 +274,7 @@ var SecretArea = /*#__PURE__*/function () {
     value: function handleRequest() {
       var _this2 = this;
 
-      axios_default().post("", {
+      axios_default().post("https://quizzical-kepler-031c3f.netlify.app/.netlify/functions/aws", {
         password: this.field.value
       }).then(function (response) {
         _this2.form.remove();

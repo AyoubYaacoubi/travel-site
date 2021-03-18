@@ -20,7 +20,7 @@ class SecretArea {
 
   handleRequest() {
     axios
-      .post("", {password: this.field.value})
+      .post("https://quizzical-kepler-031c3f.netlify.app/.netlify/functions/aws", {password: this.field.value})
       .then((response) => {
         this.form.remove()
         this.content.innerHTML = response.data
