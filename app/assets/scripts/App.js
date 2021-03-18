@@ -3,9 +3,14 @@ import "lazysizes"
 import MobileNav from "./modules/_MobileNav"
 import RevealOnScroll from "./modules/_RevealOnScroll"
 import StickyHeader from "./modules/_StickyHeader"
+import SecretArea from "./modules/_SecretArea"
 // import Modal from "./modules/_Modal"
-
 // new Modal()
+
+if (!document.querySelector(".client-area")) {
+  new SecretArea()
+}
+
 new MobileNav()
 new RevealOnScroll(document.querySelectorAll(".feature-item"), 75)
 new RevealOnScroll(document.querySelectorAll(".testimonial"), 60)
