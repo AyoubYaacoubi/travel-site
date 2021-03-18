@@ -4,7 +4,7 @@ class SecretArea {
   constructor() {
     this.injectHTML()
     this.form = document.querySelector(".client-area__form")
-    this.field = document.querySelector(".client-area__content-area")
+    this.field = document.querySelector(".client-area__input")
     this.content = document.querySelector(".client-area__content-area")
     this.events()
   }
