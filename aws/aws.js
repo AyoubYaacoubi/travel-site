@@ -17,7 +17,6 @@ exports.handler = function (event, context, callback) {
   } else {
     callback(null, {
       codeStatus: 401,
-      body: "try again!",
     })
   }
 }
