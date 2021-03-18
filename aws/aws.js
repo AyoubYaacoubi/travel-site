@@ -1,7 +1,7 @@
 exports.handler = function (event, context, callback) {
   let secretContent = `
-    <h1>welcom to the inner circle!</h>
-    <p>in this little seminar you'll learn how to make 100 dolor a seconde just like <strong>butter</strong></p>
+    <h1 style="color: lightblue; text-transform: uppercase; text-align:center;">welcom to the inner circle!</h>
+    <p style="font-style: italic;">in this little seminar you'll learn how to make 100k  a day, new previous knowledge required. just like <strong>butter</strong></p>
   `
   let body
   if (event.body) {
